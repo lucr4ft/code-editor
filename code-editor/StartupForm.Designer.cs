@@ -53,7 +53,6 @@ namespace Lucraft.Editor
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(762, 23);
             this.progressBar1.TabIndex = 2;
-            this.progressBar1.Value = 40;
             // 
             // label2
             // 

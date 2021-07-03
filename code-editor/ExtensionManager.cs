@@ -15,5 +15,15 @@ namespace Lucraft.Editor
         {
 
         }
+
+        public static void InstallExtension(string id)
+        {
+
+        }
+
+        public static void UninstallExtension(string id)
+        {
+
+        }
     }
 }

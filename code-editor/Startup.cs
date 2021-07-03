@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lucraft.Editor
 {
@@ -13,24 +14,27 @@ namespace Lucraft.Editor
     {
         public static Config Configuration { get; private set; }
 
-        public List<StartupTask> StartupTasks { get; } = new List<StartupTask>() 
+        private static List<StartupTask> StartupTasks { get; } = new List<StartupTask>() 
         {
-            new StartupTask(() => LoadConfig(), "Loading Config..."),
+            new StartupTask(() => Config.Load(), "Loading Config..."),
             new StartupTask(() => ExtensionManager.LoadExtensions(), "Loading Extensions..."),
         };
 
-        #region StartupTasks Methods
+        private delegate void Update();
 
-        public static Config LoadConfig()
+        public static void Start(ProgressBar progressBar)
         {
-            var config = new Config();
-            string fileContent = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "lucraft\\code-editor\\config.json"));
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(fileContent);
-            // TODO: set values of {config}
-            return config;
-        }
+            Update updateMaximum = delegate { progressBar.Maximum = StartupTasks.Count; };
+            Update updateValue = delegate { progressBar.Value += 1; };
 
-        #endregion
+            progressBar?.Invoke(updateMaximum);
+
+            for (int i = 0; i < StartupTasks.Count; i++)
+            {
+                Task.Run(() => StartupTasks[i]).Wait();
+                progressBar?.Invoke(updateValue);
+            }
+        }
     }
 
     public class StartupTask : Task

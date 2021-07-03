@@ -22,19 +22,19 @@ namespace Lucraft.Editor
         public StartupForm()
         {
             InitializeComponent();
-            //LoadCompleted += StartupForm_LoadCompleted;
+            LoadCompleted += StartupForm_LoadCompleted;
         }
 
         private void StartupForm_LoadCompleted()
         {
-            
+            Task.Run(() => Startup.Start(progressBar1));
         }
 
         private void Startup_Shown(object sender, EventArgs e)
         {
-            //Application.DoEvents();
-            //Refresh();
-            //LoadCompleted?.Invoke();
+            Application.DoEvents();
+            Refresh();
+            LoadCompleted?.Invoke();
         }
     }
 }

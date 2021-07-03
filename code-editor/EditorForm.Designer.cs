@@ -82,9 +82,11 @@ namespace Lucraft.Editor
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.defaultEditor1 = new Lucraft.Editor.DefaultEditor();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.defaultEditor2 = new Lucraft.Editor.DefaultEditor();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -271,7 +273,9 @@ namespace Lucraft.Editor
             this.toolStripButton3,
             this.toolStripSeparator4,
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripSeparator5,
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(957, 25);
@@ -402,6 +406,14 @@ namespace Lucraft.Editor
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // defaultEditor1
+            // 
+            this.defaultEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.defaultEditor1.Location = new System.Drawing.Point(3, 3);
+            this.defaultEditor1.Name = "defaultEditor1";
+            this.defaultEditor1.Size = new System.Drawing.Size(614, 516);
+            this.defaultEditor1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.defaultEditor2);
@@ -413,14 +425,6 @@ namespace Lucraft.Editor
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // defaultEditor1
-            // 
-            this.defaultEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.defaultEditor1.Location = new System.Drawing.Point(3, 3);
-            this.defaultEditor1.Name = "defaultEditor1";
-            this.defaultEditor1.Size = new System.Drawing.Size(614, 516);
-            this.defaultEditor1.TabIndex = 0;
-            // 
             // defaultEditor2
             // 
             this.defaultEditor2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -428,6 +432,20 @@ namespace Lucraft.Editor
             this.defaultEditor2.Name = "defaultEditor2";
             this.defaultEditor2.Size = new System.Drawing.Size(614, 516);
             this.defaultEditor2.TabIndex = 0;
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::Lucraft.Editor.Properties.Resources.new_document;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // EditorForm
             // 
@@ -498,6 +516,8 @@ namespace Lucraft.Editor
         private DefaultEditor defaultEditor1;
         private System.Windows.Forms.TabPage tabPage2;
         private DefaultEditor defaultEditor2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }
 
