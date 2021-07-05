@@ -20,7 +20,7 @@ namespace Lucraft.CodeEditor
 
         public static bool RegisterEditor(object editor) => false;
 
-        public static EditorControl GetEditorForFile(string file) => new DefaultEditor();
+        public static EditorControl GetEditorForFile(FileInfo file) => new DefaultEditor() { File = file };
 
         /// <summary>
         /// 
