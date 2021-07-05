@@ -16,6 +16,8 @@ namespace Lucraft.CodeEditor
     public partial class CodeEditorForm : Form
     {
         private readonly List<string> openFiles = new();
+        private readonly List<EditorControl> openEditors = new();
+        private EditorControl CurrentEditor = null;
 
         public CodeEditorForm()
         {
@@ -29,11 +31,6 @@ namespace Lucraft.CodeEditor
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             // build project
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            // save all open/modified files
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -73,7 +70,9 @@ namespace Lucraft.CodeEditor
                     currentNode.Nodes.Add(new TreeNode(file.Name));
             }
 
+            // expand the root node
             node.Expand();
+            // prevent the root node from being collapsed
             treeView.BeforeCollapse += (object sender, TreeViewCancelEventArgs e) =>
             {
                 if (e.Node.Tag == rootDirectory)
@@ -82,16 +81,25 @@ namespace Lucraft.CodeEditor
             treeView.Nodes.Add(node);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
         public void OpenFile(string path)
         {
             Debug.WriteLine(path);
             if (openFiles.Contains(path))
                 return;
             openFiles.Add(path);
-            EditorControl editor = CodeEditor.GetEditorForFile(path);
+            
+
+            EditorControl editor = CodeEditor.GetEditorForFile(new FileInfo(path));
             editor.Code = File.ReadAllText(path);
-            Debug.WriteLine(editor.Code);
             editor.Dock = DockStyle.Fill;
+
+            openEditors.Add(editor);
+            CurrentEditor = editor;
+
             var tabPage = new TabPage
             {
                 Dock = DockStyle.Fill,
@@ -104,15 +112,34 @@ namespace Lucraft.CodeEditor
         }
 
         #region EventHandler
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            // when populating the TreeView, the root directory
+            // and subdirectories, their DirectoryInfo is assigned
+            // to the nodes Tag object
+            // only for files nothing is assigned to Node.Tag, so 
+            // we know the Node represents a file, if the Tag is null
             if (e.Node.Tag == null)
             {
                 // open file
-                Debug.WriteLine("OPEN FILE: " + e.Node.Text + " | " + e.Node.FullPath);
                 OpenFile(CodeEditor.Current.Path + e.Node.FullPath[e.Node.FullPath.IndexOf("\\")..]);
             }
         }
         #endregion
+
+        private void SaveAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openEditors.ForEach(o => o.Save());
+        }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrentEditor.Save();
+        }
     }
 }
