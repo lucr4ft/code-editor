@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lucraft.Editor
+namespace Lucraft.CodeEditor
 {
     static class Program
     {
@@ -18,6 +18,9 @@ namespace Lucraft.Editor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartupForm());
+
+            //Application.Run(new CodeEditorForm());
+            CodeEditor.Start();
         }
     }
 }

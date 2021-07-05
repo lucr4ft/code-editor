@@ -1,5 +1,7 @@
 ﻿
-namespace Lucraft.Editor
+using System;
+
+namespace Lucraft.CodeEditor
 {
     partial class DefaultEditor
     {
@@ -39,6 +41,8 @@ namespace Lucraft.Editor
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("JetBrains Mono", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(902, 459);
@@ -53,6 +57,7 @@ namespace Lucraft.Editor
             this.Controls.Add(this.richTextBox1);
             this.Name = "DefaultEditor";
             this.Size = new System.Drawing.Size(902, 459);
+            this.Load += (object sender, EventArgs e) => { this.richTextBox1.Text = Code; };
             this.ResumeLayout(false);
 
         }

@@ -1,0 +1,6 @@
+﻿{
+	"name": "TestExtension",
+	"author": "Luca Lewin [Lucraft]",
+	"version": "v0.0.0.1-alpha.0.1",
+	"entry": "test_extension.Entry"
+}

@@ -5,17 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Lucraft.Editor</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <StartupObject>Lucraft.Editor.Program</StartupObject>
+    <StartupObject>Lucraft.CodeEditor.Program</StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Lucraft.Extensions.Editor">
-      <HintPath>..\..\lucraft.extensions\Lucraft.Extensions.Editor\bin\Debug\net6.0\ref\Lucraft.Extensions.Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

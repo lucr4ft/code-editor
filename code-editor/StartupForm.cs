@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lucraft.Editor
+namespace Lucraft.CodeEditor
 {
     public partial class StartupForm : Form
     {
@@ -25,9 +25,19 @@ namespace Lucraft.Editor
             LoadCompleted += StartupForm_LoadCompleted;
         }
 
+        private delegate void InvokeMethod();
+
         private void StartupForm_LoadCompleted()
         {
-            Task.Run(() => Startup.Start(progressBar1));
+            Task startup = Task.Run(() => Startup.Start(progressBar1));
+            Application.DoEvents();
+            Refresh();
+            Task.Run(() =>
+            {
+                startup.Wait();
+                InvokeMethod close = delegate { Close(); };
+                Invoke(close);
+            });
         }
 
         private void Startup_Shown(object sender, EventArgs e)

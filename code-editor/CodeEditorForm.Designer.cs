@@ -1,7 +1,7 @@
 ﻿
-namespace Lucraft.Editor
+namespace Lucraft.CodeEditor
 {
-    partial class EditorForm
+    partial class CodeEditorForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,32 +29,16 @@ namespace Lucraft.Editor
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node8");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node7", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node6", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node9");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node10");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node5", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node3", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node1");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeEditorForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recentProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -70,25 +54,21 @@ namespace Lucraft.Editor
             this.extensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sdfsdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.defaultEditor1 = new Lucraft.Editor.DefaultEditor();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.defaultEditor2 = new Lucraft.Editor.DefaultEditor();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -96,8 +76,6 @@ namespace Lucraft.Editor
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -138,13 +116,19 @@ namespace Lucraft.Editor
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectToolStripMenuItem,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.toolStripMenuItem1,
+            this.folderToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.otherToolStripMenuItem});
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // projectToolStripMenuItem
             // 
+            this.projectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("projectToolStripMenuItem.Image")));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.projectToolStripMenuItem.Text = "Project...";
@@ -153,6 +137,33 @@ namespace Lucraft.Editor
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem1.Text = "File";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // folderToolStripMenuItem
+            // 
+            this.folderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("folderToolStripMenuItem.Image")));
+            this.folderToolStripMenuItem.Name = "folderToolStripMenuItem";
+            this.folderToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.folderToolStripMenuItem.Text = "Folder";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(121, 6);
+            // 
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("otherToolStripMenuItem.Image")));
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.otherToolStripMenuItem.Text = "Other...";
             // 
             // openToolStripMenuItem
             // 
@@ -173,6 +184,7 @@ namespace Lucraft.Editor
             // 
             // refreshF5ToolStripMenuItem
             // 
+            this.refreshF5ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshF5ToolStripMenuItem.Image")));
             this.refreshF5ToolStripMenuItem.Name = "refreshF5ToolStripMenuItem";
             this.refreshF5ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.refreshF5ToolStripMenuItem.Text = "Refresh (F5)";
@@ -191,6 +203,9 @@ namespace Lucraft.Editor
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.exitToolStripMenuItem.Text = "Exit (Alt+F4)";
@@ -216,6 +231,7 @@ namespace Lucraft.Editor
             // 
             // buildProjectToolStripMenuItem
             // 
+            this.buildProjectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("buildProjectToolStripMenuItem.Image")));
             this.buildProjectToolStripMenuItem.Name = "buildProjectToolStripMenuItem";
             this.buildProjectToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.buildProjectToolStripMenuItem.Text = "Build Project";
@@ -228,6 +244,7 @@ namespace Lucraft.Editor
             // 
             // cleanProjectToolStripMenuItem
             // 
+            this.cleanProjectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cleanProjectToolStripMenuItem.Image")));
             this.cleanProjectToolStripMenuItem.Name = "cleanProjectToolStripMenuItem";
             this.cleanProjectToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.cleanProjectToolStripMenuItem.Text = "Clean Project";
@@ -248,23 +265,19 @@ namespace Lucraft.Editor
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(46, 21);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // contextMenuStrip1
+            // aboutToolStripMenuItem
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sdfsdfToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 26);
-            // 
-            // sdfsdfToolStripMenuItem
-            // 
-            this.sdfsdfToolStripMenuItem.Name = "sdfsdfToolStripMenuItem";
-            this.sdfsdfToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.sdfsdfToolStripMenuItem.Text = "sdfsdf";
+            this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // toolStrip1
             // 
@@ -285,7 +298,7 @@ namespace Lucraft.Editor
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::Lucraft.Editor.Properties.Resources.diskette;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
@@ -299,9 +312,9 @@ namespace Lucraft.Editor
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.BackgroundImage = global::Lucraft.Editor.Properties.Resources.hammer;
+            this.toolStripButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.BackgroundImage")));
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Lucraft.Editor.Properties.Resources.hammer;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -311,12 +324,26 @@ namespace Lucraft.Editor
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Lucraft.Editor.Properties.Resources.start_png_44878;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
             // 
             // splitContainer1
             // 
@@ -328,7 +355,7 @@ namespace Lucraft.Editor
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer1.Panel1.Controls.Add(this.treeView);
             // 
             // splitContainer1.Panel2
             // 
@@ -337,42 +364,20 @@ namespace Lucraft.Editor
             this.splitContainer1.SplitterDistance = 325;
             this.splitContainer1.TabIndex = 2;
             // 
-            // treeView1
+            // treeView
             // 
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.treeView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.treeView1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node2";
-            treeNode1.Text = "Node2";
-            treeNode2.Name = "Node4";
-            treeNode2.Text = "Node4";
-            treeNode3.Name = "Node8";
-            treeNode3.Text = "Node8";
-            treeNode4.Name = "Node7";
-            treeNode4.Text = "Node7";
-            treeNode5.Name = "Node6";
-            treeNode5.Text = "Node6";
-            treeNode6.Name = "Node9";
-            treeNode6.Text = "Node9";
-            treeNode7.Name = "Node10";
-            treeNode7.Text = "Node10";
-            treeNode8.Name = "Node5";
-            treeNode8.Text = "Node5";
-            treeNode9.Name = "Node3";
-            treeNode9.Text = "Node3";
-            treeNode10.Name = "Node0";
-            treeNode10.Text = "Node0";
-            treeNode11.Name = "Node1";
-            treeNode11.Text = "Node1";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11});
-            this.treeView1.Size = new System.Drawing.Size(325, 552);
-            this.treeView1.TabIndex = 0;
+            this.treeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.treeView.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.treeView.LabelEdit = true;
+            this.treeView.Location = new System.Drawing.Point(0, 0);
+            this.treeView.Name = "treeView";
+            this.treeView.ShowRootLines = false;
+            this.treeView.Size = new System.Drawing.Size(325, 552);
+            this.treeView.TabIndex = 0;
             // 
             // panel1
             // 
@@ -397,57 +402,23 @@ namespace Lucraft.Editor
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.defaultEditor1);
+            this.tabPage1.BackColor = System.Drawing.Color.DimGray;
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(620, 522);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // defaultEditor1
-            // 
-            this.defaultEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.defaultEditor1.Location = new System.Drawing.Point(3, 3);
-            this.defaultEditor1.Name = "defaultEditor1";
-            this.defaultEditor1.Size = new System.Drawing.Size(614, 516);
-            this.defaultEditor1.TabIndex = 0;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.defaultEditor2);
+            this.tabPage2.BackColor = System.Drawing.Color.DimGray;
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(620, 522);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // defaultEditor2
-            // 
-            this.defaultEditor2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.defaultEditor2.Location = new System.Drawing.Point(3, 3);
-            this.defaultEditor2.Name = "defaultEditor2";
-            this.defaultEditor2.Size = new System.Drawing.Size(614, 516);
-            this.defaultEditor2.TabIndex = 0;
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Lucraft.Editor.Properties.Resources.new_document;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // EditorForm
+            // CodeEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -459,11 +430,10 @@ namespace Lucraft.Editor
             this.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "EditorForm";
-            this.Text = "Form1";
+            this.Name = "CodeEditorForm";
+            this.Text = "CodeEditor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -472,13 +442,10 @@ namespace Lucraft.Editor
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -488,8 +455,6 @@ namespace Lucraft.Editor
         private System.Windows.Forms.ToolStripMenuItem extensionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem sdfsdfToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -506,18 +471,21 @@ namespace Lucraft.Editor
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private DefaultEditor defaultEditor1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private DefaultEditor defaultEditor2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripMenuItem folderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 

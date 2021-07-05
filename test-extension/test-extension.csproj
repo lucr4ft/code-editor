@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>test_extension</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="extension.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\code-editor\code-editor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="extension.json" />
+  </ItemGroup>
+
+</Project>

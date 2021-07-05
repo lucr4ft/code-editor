@@ -5,30 +5,33 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Lucraft.Editor
+namespace Lucraft.CodeEditor
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Config
     {
-        public IList<Project> Projects { get; set; }
-        public Project Current { get; set; }
+        [JsonProperty("projects")]          public List<Project> Projects { get; set; }
+        [JsonProperty("current_project")]   public string CurrentProjectPath { get; set; }
+        [JsonProperty("extensions")]        public List<Extension> Extensions { get; set; }
 
-        public string Version { get; set; }
-
-        public string Theme { get; set; }
-        public string Language { get; set; }
-        public Font FontGeneral { get; set; }
-        public Font FontEditor { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static void Load()
         {
-            string fileContent = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "lucraft\\code-editor\\config.json"));
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(fileContent);
-            // TODO: set values of {config}
+            string fileContent = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "lucraft", "code-editor", "config.json"));
+            CodeEditor.Config = JsonConvert.DeserializeObject<Config>(fileContent);
         }
 
-        public static void Save()
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Save()
         {
             // TODO: implement saving
         }

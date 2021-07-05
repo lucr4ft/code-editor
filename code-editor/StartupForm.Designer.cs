@@ -1,5 +1,5 @@
 ﻿
-namespace Lucraft.Editor
+namespace Lucraft.CodeEditor
 {
     partial class StartupForm
     {
@@ -78,6 +78,8 @@ namespace Lucraft.Editor
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StartupForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup";
             this.TopMost = true;
