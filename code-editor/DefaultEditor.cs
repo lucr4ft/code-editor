@@ -16,6 +16,12 @@ namespace Lucraft.CodeEditor
         public DefaultEditor()
         {
             InitializeComponent();
+            OnSave += DefaultEditor_OnSave;
+        }
+
+        private void DefaultEditor_OnSave()
+        {
+            Code = richTextBox1.Text;
         }
     }
 }

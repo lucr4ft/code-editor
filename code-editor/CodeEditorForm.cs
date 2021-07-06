@@ -23,6 +23,22 @@ namespace Lucraft.CodeEditor
         {
             InitializeComponent();
             treeView.NodeMouseDoubleClick += TreeView_NodeMouseDoubleClick;
+            treeView.NodeMouseClick += TreeView_NodeMouseClick;
+            treeView.AfterLabelEdit += TreeView_AfterLabelEdit;
+        }
+
+        private void TreeView_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            // TODO: rename file in filesystem
+        }
+
+        private void TreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            treeView.SelectedNode = e.Node;
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(treeView, e.Location);
+            }
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
@@ -139,7 +155,13 @@ namespace Lucraft.CodeEditor
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CurrentEditor.Save();
+            //CurrentEditor.Save();
+            openEditors[tabControl1.SelectedIndex].Save();
+        }
+
+        private void RenameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeView.SelectedNode.BeginEdit();
         }
     }
 }

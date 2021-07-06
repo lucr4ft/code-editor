@@ -14,6 +14,9 @@ namespace Lucraft.CodeEditor
         public string Code { get; set; }
         public FileInfo File { get; init; }
 
+        public delegate void SaveDelegate();
+        public event SaveDelegate OnSave;
+
         public EditorControl()
         {
         }
@@ -25,6 +28,7 @@ namespace Lucraft.CodeEditor
 
         public void Save()
         {
+            OnSave?.Invoke();
             System.IO.File.WriteAllText(File.FullName, Code);
         }
     }
