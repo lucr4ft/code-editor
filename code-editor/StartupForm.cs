@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Lucraft.CodeEditor
 {
-    public partial class StartupForm : Form
+    internal partial class StartupForm : Form
     {
         private delegate void LoadCompletedEventHandler();
         private event LoadCompletedEventHandler LoadCompleted;

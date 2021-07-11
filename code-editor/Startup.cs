@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Lucraft.CodeEditor
 {
-    public class Startup
+    internal class Startup
     {
         public static Config Configuration { get; private set; }
 
