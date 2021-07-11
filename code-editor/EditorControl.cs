@@ -11,25 +11,23 @@ namespace Lucraft.CodeEditor
 {
     public abstract class EditorControl : UserControl
     {
-        public string Code { get; set; }
         public FileInfo File { get; init; }
 
+        public bool IsModified { get; protected set; }
+
+        public delegate void ModifiedDelegate();
         public delegate void SaveDelegate();
-        public event SaveDelegate OnSave;
+
+        public event ModifiedDelegate Modified;
+        public event SaveDelegate Save;
 
         public EditorControl()
         {
         }
 
-        public void LoadCode()
+        public void InvokeSave()
         {
-            Code = System.IO.File.ReadAllText(File.FullName);
-        }
-
-        public void Save()
-        {
-            OnSave?.Invoke();
-            System.IO.File.WriteAllText(File.FullName, Code);
+            Save?.Invoke();
         }
     }
 }
