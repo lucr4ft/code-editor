@@ -16,12 +16,28 @@ namespace Lucraft.CodeEditor
         public DefaultEditor()
         {
             InitializeComponent();
-            OnSave += DefaultEditor_OnSave;
+
+            Load += DefaultEditor_Load;
+            Save += DefaultEditor_Save;
+
+            richTextBox1.ModifiedChanged += RichTextBox1_ModifiedChanged;
+
         }
 
-        private void DefaultEditor_OnSave()
+        private void DefaultEditor_Load(object sender, EventArgs e)
         {
-            Code = richTextBox1.Text;
+            richTextBox1.Text = System.IO.File.ReadAllText(File.FullName);
+        }
+
+        private void RichTextBox1_ModifiedChanged(object sender, EventArgs e)
+        {
+            //base.Modified?.Invoke();
+            Debug.WriteLine("MODIFIED");
+        }
+
+        private void DefaultEditor_Save()
+        {
+            System.IO.File.WriteAllText(File.FullName, richTextBox1.Text);
         }
     }
 }

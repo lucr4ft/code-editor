@@ -56,7 +56,6 @@ namespace Lucraft.CodeEditor
             this.Controls.Add(this.richTextBox1);
             this.Name = "DefaultEditor";
             this.Size = new System.Drawing.Size(902, 459);
-            this.Load += (object sender, EventArgs e) => { LoadCode(); this.richTextBox1.Text = Code; };
             this.ResumeLayout(false);
 
         }
