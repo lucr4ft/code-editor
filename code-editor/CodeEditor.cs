@@ -18,6 +18,9 @@ namespace Lucraft.CodeEditor
 
         public static Project Current { get; private set; }
 
+        public static string DefaultFileName { get; } = "New File";
+        public static string DefaultFolderName { get; } = "New Folder";
+
         public static bool RegisterEditor(object editor) => false;
 
         public static EditorControl GetEditorForFile(FileInfo file) => new DefaultEditor() { File = file };
